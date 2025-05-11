@@ -12,12 +12,6 @@
             background-attachment: fixed;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
-            animation: fadeIn 2s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .overlay {
@@ -26,8 +20,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 40px;
+            padding: 40px 20px;
             text-align: center;
         }
 
@@ -35,10 +28,11 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 30px;
-            max-width: 600px;
-            backdrop-filter: blur(5px);
+            max-width: 800px;
+            backdrop-filter: blur(6px);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease;
+            margin: 30px auto;
         }
 
         .card:hover {
@@ -46,7 +40,7 @@
         }
 
         h1 {
-            font-size: 40px;
+            font-size: 36px;
             margin: 10px 0;
             text-shadow: 2px 2px 4px #000;
         }
@@ -72,17 +66,72 @@
             border-radius: 15px;
             margin-bottom: 20px;
         }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            padding-top: 25px;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
     <div class="overlay">
-        <div class="card">
+        <div class="card reveal">
             <img src="https://cdn.pixabay.com/photo/2015/05/15/14/47/coding-768528_1280.jpg" alt="Software Ontwikkelaar">
             <h1>Mijn beroepskeuze is Software Ontwikkelaar</h1>
             <h1>Caglayan Yalcin</h1>
             <h1>School: De Groepe Parel</h1>
             <a href="Beroep_Presentatie_Softwareontwikkelaar.pptx" download class="button">📊 Download PowerPoint</a>
         </div>
+
+        <div class="card reveal">
+            <h1>Wat doet een Software Ontwikkelaar?</h1>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/N8YMlLxhD2M" title="Software Developer Video" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Scroll reveal effect
+        function revealElements() {
+            const reveals = document.querySelectorAll(".reveal");
+            for (const el of reveals) {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", revealElements);
+        window.addEventListener("load", revealElements);
+    </script>
 </body>
 </html>
