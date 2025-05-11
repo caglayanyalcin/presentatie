@@ -1,88 +1,43 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Mijn Beroepskeuze</title>
     <style>
         body {
-            margin: 0;
             background-image: url('https://media.istockphoto.com/id/1201184307/vector/binary-code-background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
-            animation: fadeIn 2s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
             text-align: center;
+            padding-top: 100px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        .card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            max-width: 600px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: scale(1.02);
-        }
-
         h1 {
-            font-size: 40px;
-            margin: 10px 0;
+            font-size: 60px;
             text-shadow: 2px 2px 4px #000;
         }
-
-        .button {
+        a.button {
             display: inline-block;
-            margin-top: 30px;
-            font-size: 18px;
-            padding: 12px 25px;
+            margin-top: 40px;
+            font-size: 20px;
+            padding: 10px 20px;
             background-color: #1abc9c;
             color: white;
             text-decoration: none;
             border-radius: 10px;
-            transition: background-color 0.3s;
+            cursor: pointer;
         }
-
-        .button:hover {
+        a.button:hover {
             background-color: #16a085;
-        }
-
-        img {
-            max-width: 100%;
-            border-radius: 15px;
-            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="overlay">
-        <div class="card">
-            <img src="https://cdn.pixabay.com/photo/2015/05/15/14/47/coding-768528_1280.jpg" alt="Software Ontwikkelaar">
-            <h1>Mijn beroepskeuze is Software Ontwikkelaar</h1>
-            <h1>Caglayan Yalcin Groep 7</h1>
-            <h1>De Groepe Parel</h1>
-            <a href="Beroep_Presentatie_Softwareontwikkelaar.pptx" download class="button">📊 Download PowerPoint</a>
-        </div>
-    </div>
+    <h1>Mijn beroepskeuze is Software Ontwikkelaar.</h1>
+    <h1>Caglayan Yalcin.</h1>
+    <h1>De Groepe Parel</h1>
+    <br>
+    <a href="Beroep_Presentatie_Softwareontwikkelaar.pptx" download class="button">📊 Download PowerPoint</a>
 </body>
 </html>
